@@ -12,6 +12,7 @@ SHELL ["/bin/bash", "-c"]
 RUN apt-get update && \
     apt-get install -y git curl wget libatomic1 && \
     mkdir -p /opt/altv && \
+	git config --global alias.up '!git remote update -p; git merge --ff-only @{u}' && \
 	git -C /opt/altv clone https://github.com/Dav-Renz/altv-athena-public.git athena-server && \
     cd /opt/altv/athena-server && \
     npm install && \
@@ -24,7 +25,7 @@ RUN apt-get update && \
 #
 #WORKDIR /opt/altv/
 #
-#RUN git -C /opt/altv clone https://github.com/Dav-Renz/altv-athena-public.git athena-server && \
+#RUN git -C /opt/altv clone https://github.com/Dav-Renz/prod-athena.git athena-server && \
 #    cd /opt/altv/athena-server && \
 #    npm install && \
 #    npm run update

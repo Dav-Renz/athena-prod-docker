@@ -65,6 +65,9 @@ else
 fi
 
 
+git up
+
+
 cat <<EOF >/opt/altv/athena-server/AthenaConfig.json
 {
     "[?] A URI with authentication to connect to a MongoDB Database": "TYPE IS STRING",
@@ -74,45 +77,6 @@ cat <<EOF >/opt/altv/athena-server/AthenaConfig.json
     "ARES_ENDPOINT": $ATHENA_SERVER_ARES_ENDPOINT,
     "[?] Use altv built-in reconnect?": "TYPE IS BOOLEAN",
     "USE_ALTV_RECONNECT": $ATHENA_SERVER_USE_ALTV_RECONNECT
-}
-EOF
-
-
-cat <<EOF >/opt/altv/athena-server/configs/xprod.jsonx
-{
-    "name": "$ALTV_SERVER_NAME",
-    "host": "$ALTV_SERVER_HOST",
-    "env": "$ALTV_SERVER_ENVIRONMENT",
-    "port": $ALTV_SERVER_PORT,
-    "players": $ALTV_SERVER_PLAYERS,
-    "password": $ALTV_SERVER_PASSWORD,
-    "token": $ALTV_SERVER_TOKEN,
-    "announce": $ALTV_SERVER_ANNOUNCE,
-    "gamemode": "$ALTV_SERVER_GAMEMODE",
-    "website": "$ALTV_SERVER_WEBSITE",
-    "language": "$ALTV_SERVER_LANGUAGE",
-    "description": "$ALTV_SERVER_DESCRIPTION",
-    "debug": $ALTV_SERVER_DEBUG,
-    "streamingDistance": §ALTV_SERVER_STREAMING_DISTANCE,
-    "migrationDistance": $ALTV_SERVER_MIGRATION_DISTANCE,
-    "timeout": $ALTV_SERVER_TIMEOUT,
-    "announceRetryErrorDelay": $ALTV_SERVER_ANNOUNCE_RETRY_ERROR_DELAY,
-    "announceRetryErrorAttempts": $ALTV_SERVER_ANNOUNCE_RETRY_ERROR_ATTEMPTS,
-    "modules": $ALTV_SERVER_MODULES,
-    "resources": $ALTV_SERVER_RESOURCES,
-    "tags": $ALTV_SERVER_TAGS,
-    "useEarlyAuth": $ALTV_SERVER_USE_EARLYAUTH,
-    "earlyAuthUrl": $ALTV_SERVER_EARLYAUTH_URL,
-    "useCdn": $ALTV_SERVER_USE_CDN,
-    "cdnUrl": $ALTV_SERVER_CDN_URL,
-    "voice": {
-        "bitrate": $ALTV_SERVER_VOICE_BITRATE,
-        "externalSecret": $ALTV_SERVER_VOICE_EXTERNAL_SECRET,
-        "externalHost": $ALTV_SERVER_VOICE_EXTERNAL_HOST,
-        "externalPort": $ALTV_SERVER_VOICE_EXTERNAL_PORT,
-        "externalPublicHost": $ALTV_SERVER_VOICE_EXTERNAL_PUBLIC_HOST,
-        "externalPublicPort": $ALTV_SERVER_VOICE_EXTERNAL_PUBLIC_PORT
-    }
 }
 EOF
 
