@@ -1,5 +1,5 @@
 
-FROM node:17.9-bullseye
+FROM node:18.9-bullseye
 
 COPY ./.docker/scripts/entrypoint.sh /root/
 
